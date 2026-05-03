@@ -13,7 +13,9 @@ langchain-text-splitters>=0.3.0
 langchain-openai>=0.2.0          # 0.2+ uses pydantic v2, compatible with langchain-core 0.3+
 langchain-chroma>=0.1.4          # standalone Chroma integration (replaces community version)
 
-chromadb>=0.5.3
+# Pin stack for Streamlit Cloud / pydantic compatibility (avoid Py 3.14 chromadb issues)
+pydantic>=2.4,<3
+chromadb>=0.5.23,<0.7
 
 # PDF and document loaders
 pypdf==4.3.1
@@ -23,6 +25,7 @@ python-pptx
 # YAML parsing
 pyyaml==6.0.2
 streamlit>=1.45.0
+python-dotenv>=1.0.0
 fpdf2>=2.7.0
 Pillow>=10.0.0
 

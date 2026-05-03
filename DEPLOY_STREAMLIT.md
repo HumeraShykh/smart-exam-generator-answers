@@ -34,6 +34,10 @@ git push -u origin main
 3. **Main file path:** `app.py` (if the GitHub repo root is this project folder). If you put the app in a subfolder, set path to `subfolder/app.py`.
 4. **Deploy.**
 
+The repo includes **[`runtime.txt`](runtime.txt)** (`python-3.12.8`) so Cloud uses **Python 3.12**, not a bleeding-edge default. That avoids `chromadb` + `pydantic` import crashes seen on very new Python builds.
+
+After you change dependencies or `runtime.txt`, open the app on Streamlit Cloud → **⋮ → Reboot app** (or push a new commit so it rebuilds).
+
 ## 4. Secrets (mirror your local `.env`)
 
 In the deployed app: **Settings → Secrets**, paste **TOML** with the same variable names you use locally. Example (replace placeholders):

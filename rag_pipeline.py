@@ -23,6 +23,7 @@ import urllib.error
 import urllib.request
 import yaml
 from pathlib import Path
+from typing import Any
 
 # Same folder as app.py, and one level up (some users put .env in the outer "NLP Project" folder)
 _PKG_ROOT = Path(__file__).resolve().parent
@@ -53,8 +54,10 @@ from langchain_community.document_loaders import (
     TextLoader,
     UnstructuredPowerPointLoader,
 )
-from langchain_chroma import Chroma
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
+
+# Chroma / chromadb are imported lazily in _get_or_create_collection so import-time
+# pydantic errors on some hosts (e.g. mismatched Python/chromadb wheels) do not block app startup.
 
 # ---------------------------------------------------------------------------
 # Configuration — env vars override defaults (good for Mac / cloud without LM Studio)
@@ -690,8 +693,10 @@ def load_clo_plo(path: str) -> list[Document]:
 # 5. Vector store helpers
 # ---------------------------------------------------------------------------
 
-def _get_or_create_collection(collection_name: str, embeddings) -> Chroma:
+def _get_or_create_collection(collection_name: str, embeddings) -> Any:
     """Returns a persistent ChromaDB collection (creates it if it doesn't exist)."""
+    from langchain_chroma import Chroma
+
     return Chroma(
         collection_name=collection_name,
         embedding_function=embeddings,
@@ -715,7 +720,7 @@ def ingest_to_collection(
     collection_name: str,
     embeddings,
     deduplicate: bool = True,
-) -> Chroma:
+) -> Any:
     """
     Embeds documents and upserts them into a named ChromaDB collection.
     If deduplicate=True, skips chunks already present (based on source+index hash).
