@@ -1,0 +1,46 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+*.so
+.eggs/
+*.egg-info/
+.eggs
+
+# Virtual environments
+.venv/
+.venv_*/
+venv/
+ENV/
+
+# App data and vector store (local / ephemeral; do not commit)
+app_data/
+.chroma/
+**/*chroma_db*/
+*.sqlite3
+
+# OS / IDE
+.DS_Store
+.idea/
+.vscode/
+.cursor/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Logs / temp
+*.log
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Windows venv (if present)
+Scripts/
+Lib/
+Include/

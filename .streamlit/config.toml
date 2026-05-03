@@ -1,0 +1,8 @@
+[browser]
+gatherUsageStats = false
+
+[server]
+# MB — keep modest for Streamlit Community Cloud free-tier RAM/timeouts
+maxUploadSize = 100
+# Safer default for public URLs. If local uploads return 403 (preview/VPN), see DEPLOY_STREAMLIT.md
+enableXsrfProtection = true

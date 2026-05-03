@@ -1,0 +1,37 @@
+# RAG Pipeline — Python dependencies
+# Install with: pip install -r requirements.txt
+
+# CrewAI multi-agent orchestration
+crewai>=0.80.0
+litellm>=1.0.0
+
+# LangChain ecosystem — all pinned to the same major version to avoid pydantic_v1 conflicts
+langchain>=0.3.0
+langchain-community>=0.3.0
+langchain-core>=0.3.0
+langchain-text-splitters>=0.3.0
+langchain-openai>=0.2.0          # 0.2+ uses pydantic v2, compatible with langchain-core 0.3+
+langchain-chroma>=0.1.4          # standalone Chroma integration (replaces community version)
+
+chromadb>=0.5.3
+
+# PDF and document loaders
+pypdf==4.3.1
+unstructured[pptx]
+python-pptx
+
+# YAML parsing
+pyyaml==6.0.2
+streamlit>=1.45.0
+fpdf2>=2.7.0
+
+# Free embeddings via Google AI Studio (recommended with Groq LLM): EXAMGEN_EMBEDDINGS_MODE=google
+langchain-google-genai>=2.0.0
+# Optional local CPU embeddings (needs working PyTorch): EXAMGEN_EMBEDDINGS_MODE=local
+# sentence-transformers>=2.2.0
+
+# LM Studio setup (no pip install needed — it's a desktop app):
+#   1. Download from https://lmstudio.ai
+#   2. Load a chat model  (e.g. Mistral-7B, LLaMA-3, Phi-3)
+#   3. Load an embedding model (e.g. nomic-embed-text, all-minilm)
+#   4. Local Server tab → Start Server  →  http://localhost:1234

@@ -1,0 +1,27 @@
+# CSC505 — Natural Language Processing
+# Sukkur IBA University
+# Course Learning Outcomes (CLOs) and Programme Learning Outcomes (PLOs)
+
+CLOs:
+  - code: CLO-1
+    description: "Explain fundamental NLP concepts including tokenization, POS tagging, parsing, and language models"
+  - code: CLO-2
+    description: "Apply transformer architectures such as BERT and GPT to NLP tasks including classification and generation"
+  - code: CLO-3
+    description: "Design and implement Retrieval-Augmented Generation (RAG) pipelines for knowledge-intensive tasks"
+  - code: CLO-4
+    description: "Build and orchestrate multi-agent AI systems using frameworks such as CrewAI and AutoGen"
+  - code: CLO-5
+    description: "Evaluate NLP models and systems using appropriate metrics and critically analyse their limitations"
+
+PLOs:
+  - code: PLO-1
+    description: "Apply knowledge of computing and mathematics appropriate to the discipline"
+  - code: PLO-2
+    description: "Analyse a problem and identify computing requirements appropriate to its solution"
+  - code: PLO-3
+    description: "Apply engineering and computer science knowledge to solve complex real-world problems"
+  - code: PLO-4
+    description: "Design, implement, and evaluate a computer-based system or process to meet desired needs"
+  - code: PLO-5
+    description: "Demonstrate an understanding of professional, ethical, legal, and social issues"
