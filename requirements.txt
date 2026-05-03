@@ -24,6 +24,7 @@ python-pptx
 pyyaml==6.0.2
 streamlit>=1.45.0
 fpdf2>=2.7.0
+Pillow>=10.0.0
 
 # Free embeddings via Google AI Studio (recommended with Groq LLM): EXAMGEN_EMBEDDINGS_MODE=google
 langchain-google-genai>=2.0.0

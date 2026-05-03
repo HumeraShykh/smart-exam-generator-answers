@@ -747,7 +747,11 @@ if _last:
 
     try:
         pdf_q = pdf_to_bytes(build_questions_pdf(questions, topic=topic_saved))
-        pdf_a = pdf_to_bytes(build_answer_key_pdf(answer_key, topic=topic_saved))
+        pdf_a = pdf_to_bytes(
+            build_answer_key_pdf(
+                answer_key, topic=topic_saved, questions=questions
+            )
+        )
     except Exception as pdf_exc:
         pdf_q = pdf_a = None
         st.markdown(
